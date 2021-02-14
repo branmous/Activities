@@ -1,0 +1,32 @@
+﻿@model Activity.Web.Data.Entidades.Activity
+
+@{
+    ViewData["Title"] = "Eliminar Tarea";
+}
+
+<h2>@ViewData["Title"]</h2>
+
+<h3>¿Estás segura de que quieres eliminar esta tarea?</h3>
+<div>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Descripcion)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Descripcion)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.IsComplete)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.IsComplete)
+        </dd>
+    </dl>
+    
+    <form asp-action="Delete">
+        <input type="hidden" asp-for="Id" />
+        <input type="submit" value="Eliminar" class="btn btn-danger" /> 
+        <a asp-action="Index" class="btn btn-warning">Regresar</a>
+    </form>
+</div>
